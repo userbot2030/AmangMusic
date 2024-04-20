@@ -31,7 +31,7 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER("AmangMusic").error(
+        LOGGER("TelegramMusic").error(
             "Tidak Ada Asisten Klien yang Ditentukan Vars!.. Proses Keluar."
         )
         return
@@ -39,7 +39,7 @@ async def init():
         not config.SPOTIFY_CLIENT_ID
         and not config.SPOTIFY_CLIENT_SECRET
     ):
-        LOGGER("AmangMusic").warning(
+        LOGGER("TelegramMusic").warning(
             "Tidak ada Spotify Vars yang ditentukan. Bot Anda tidak akan dapat memainkan kueri spotify."
         )
     try:
@@ -54,7 +54,7 @@ async def init():
     await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("AmangMusic.plugins" + all_module)
-    LOGGER("AmangMusic.plugins").info(
+    LOGGER("TelegramMusic.plugins").info(
         "Modul Berhasil Diimpor"
     )
     await userbot.start()
@@ -63,10 +63,10 @@ async def init():
     uh_ah = get_ah.username
     await userbot.one.send_message(-1001927904459, f"@{uh_ah}")
     await Amang.decorators()
-    LOGGER("AmangMusic").info("AmangMusic Music Bot Berhasil Dimulai")
+    LOGGER("TelegramMusic").info("TelegramMusic Music Bot Berhasil Dimulai")
     await idle()
 
 
 if __name__ == "__main__":
     loop.run_until_complete(init())
-    LOGGER("AmangMusic").info("Menghentikan Bot AmangMusic! Selamat tinggal")
+    LOGGER("AmangMusic").info("Menghentikan Bot TelegramMusic! Selamat tinggal")
